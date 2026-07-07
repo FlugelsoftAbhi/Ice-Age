@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freezerzz - Indian & Global Cold Storage Unit Detector</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Freezerzz is a premium Ice Age-themed cold storage unit detector mapping national (India) and international cold chain facilities. Track capacities, live temperatures, and registry records.">
+    <meta name="keywords" content="cold storage, cold chain, India cold storage, global cold storage detector, temperature controlled warehouse, freezerzz, agricultural logistics, frozen food storage">
+    <meta name="author" content="Freezerzz Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freezerzz.cloudflare.page/">
+    <meta property="og:title" content="Freezerzz - Indian & Global Cold Storage Unit Detector">
+    <meta property="og:description" content="Detect, track, and monitor cold storage facilities in India and globally. Designed with a premium, responsive Ice Age movie theme.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1580983218765-f663becf48d4?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Freezerzz - Indian & Global Cold Storage Unit Detector">
+    <meta property="twitter:description" content="Detect, track, and monitor cold storage facilities in India and globally. Designed with a premium, responsive Ice Age movie theme.">
+    
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Freezerzz",
+      "description": "An interactive detector and database tracking government-verified cold storage units in India and internationally.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Fallback Snow Background Canvas -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="frosty-header">
+        <div class="header-container">
+            <a href="#" class="logo-area" id="nav-logo">
+                <div class="logo-ice-icon">
+                    <i class="fa-solid fa-icicles"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Freezerzz</h1>
+                    <span class="logo-tagline">Glacial Chain Radar</span>
+                </div>
+            </a>
+            
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="#radar-section" class="nav-link active" id="link-radar"><i class="fa-solid fa-compass"></i> Radar</a>
+                <a href="#stats-section" class="nav-link" id="link-stats"><i class="fa-solid fa-chart-simple"></i> Glacier Stats</a>
+                <a href="#records-section" class="nav-link" id="link-records"><i class="fa-solid fa-snowflake"></i> Frozen Records</a>
+                <a href="#carve-section" class="nav-link" id="link-carve"><i class="fa-solid fa-hammer"></i> Carve Registry</a>
+            </nav>
+            
+            <div class="theme-badge">
+                <span class="badge-text"><i class="fa-solid fa-temperature-low"></i> Sub-Zero Zone</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero & Scrat's Cold Detector Section -->
+        <section id="radar-section" class="hero-section">
+            <div class="hero-bg-glacier"></div>
+            <div class="section-container">
+                <div class="hero-layout">
+                    <div class="hero-intro">
+                        <div class="sub-alert"><i class="fa-solid fa-star"></i> Ice Age Edition</div>
+                        <h2>Detect Sub-Zero Facilities Worldwide</h2>
+                        <p>Locate, filter, and track certified cold storage facilities across India and around the globe. Using structured government data logs to maintain temperature integrity.</p>
+                        
+                        <div class="stats-ribbon">
+                            <div class="ribbon-item">
+                                <span class="ribbon-val" id="stat-india-count">--</span>
+                                <span class="ribbon-lbl">India Units</span>
+                            </div>
+                            <div class="ribbon-item">
+                                <span class="ribbon-val" id="stat-global-count">--</span>
+                                <span class="ribbon-lbl">Global Units</span>
+                            </div>
+                            <div class="ribbon-item">
+                                <span class="ribbon-val" id="stat-total-capacity">--</span>
+                                <span class="ribbon-lbl">Capacity (MT)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scrat's Interactive Detector -->
+                    <div class="scrat-detector-card" id="detector-widget">
+                        <div class="frosty-card-header">
+                            <span class="card-title-icon"><i class="fa-solid fa-nut"></i> Scrat's Acorn Radar</span>
+                            <span class="card-subtitle">Dig up the nearest cold storage!</span>
+                        </div>
+                        <div class="detector-body">
+                            <div class="scrat-animation-area" id="animation-viewport">
+                                <!-- Ice Block and Scrat SVG/CSS drawing inside here -->
+                                <div class="ice-block" id="interactive-ice-block">
+                                    <div class="ice-shimmer"></div>
+                                    <i class="fa-solid fa-cube ice-cube-graphic"></i>
+                                    <div class="scrat-sprite" id="scrat-sprite-element">
+                                        <div class="scrat-eye"></div>
+                                        <div class="scrat-acorn"><i class="fa-solid fa-seedling"></i></div>
+                                    </div>
+                                    <span class="tap-hint">Tap to Crack the Ice!</span>
+                                </div>
+                                <div class="detector-feedback-msg" id="detector-status-msg">Click the frozen block above to start sniffing!</div>
+                            </div>
+                            
+                            <div class="detector-controls">
+                                <div class="coordinates-input-group">
+                                    <div class="input-field">
+                                        <label for="input-latitude">Latitude</label>
+                                        <input type="number" id="input-latitude" placeholder="e.g. 28.61" step="0.001">
+                                    </div>
+                                    <div class="input-field">
+                                        <label for="input-longitude">Longitude</label>
+                                        <input type="number" id="input-longitude" placeholder="e.g. 77.23" step="0.001">
+                                    </div>
+                                </div>
+                                <button class="btn-primary" id="btn-scrat-sniff"><i class="fa-solid fa-paw"></i> Sniff Location</button>
+                                <button class="btn-secondary-link" id="btn-gps-detect"><i class="fa-solid fa-location-crosshairs"></i> Use My GPS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Map Dashboard Section -->
+        <section class="dashboard-section">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h3>Sub-Zero Interactive Radar</h3>
+                    <p>Search, filter, and track verified cold storage zones</p>
+                </div>
+
+                <!-- Filters Panel -->
+                <div class="filter-glass-bar">
+                    <div class="filter-group search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="filter-search" placeholder="Search by name, city, state, or country...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-region"><i class="fa-solid fa-earth-americas"></i> Region</label>
+                        <select id="filter-region">
+                            <option value="all">All Regions</option>
+                            <option value="india">India Only</option>
+                            <option value="international">International Only</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-temp"><i class="fa-solid fa-thermometer"></i> Temperature</label>
+                        <select id="filter-temp">
+                            <option value="all">All Temp Zones</option>
+                            <option value="glacial">Glacial (Below -18°C)</option>
+                            <option value="frozen">Frozen (-18°C to 0°C)</option>
+                            <option value="chilled">Chilled (0°C to 8°C)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-sort"><i class="fa-solid fa-sort"></i> Sort By</label>
+                        <select id="filter-sort">
+                            <option value="capacity-desc">Capacity (High to Low)</option>
+                            <option value="capacity-asc">Capacity (Low to High)</option>
+                            <option value="temp-asc">Coldest First</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Main Radar Layout (Map Visualizer & Quick Detail Card) -->
+                <div class="radar-interactive-layout">
+                    <!-- Interactive Frozen Map Visualizer -->
+                    <div class="map-visualizer-container">
+                        <div class="map-controls">
+                            <button class="map-view-btn active" id="btn-view-india">India Glacial Grid</button>
+                            <button class="map-view-btn" id="btn-view-global">Global Glacial Grid</button>
+                        </div>
+                        
+                        <div class="glacial-map-viewport" id="map-viewport">
+                            <!-- Custom Stylized Frozen Map SVG / Canvas -->
+                            <div class="frozen-grid-overlay" id="frozen-grid-nodes">
+                                <!-- Nodes generated dynamically by JS -->
+                            </div>
+                            <div class="map-glacier-cracks"></div>
+                            
+                            <!-- Leaflet Mock map placeholder with highly stylized frozen overlay -->
+                            <div class="map-inner-placeholder">
+                                <div class="icy-compass"><i class="fa-regular fa-compass"></i></div>
+                                <span class="compass-label">GRID RADAR ACTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selected Unit Profile Card -->
+                    <div class="unit-profile-container" id="unit-detail-card">
+                        <div class="card-empty-state" id="profile-empty-state">
+                            <div class="empty-ice-icon"><i class="fa-solid fa-glass-water-droplet"></i></div>
+                            <h4>No Storage Selected</h4>
+                            <p>Select a node on the Radar Map or click a record from the log list below to freeze-frame its details.</p>
+                        </div>
+                        <div class="card-active-profile hidden" id="profile-active-state">
+                            <!-- Profile Header -->
+                            <div class="profile-header">
+                                <div class="profile-temp-badge" id="prof-temp-val">-18°C</div>
+                                <div class="profile-name-group">
+                                    <h4 id="prof-name">Dev Bhumi Cold Storage</h4>
+                                    <span class="profile-region" id="prof-location"><i class="fa-solid fa-location-dot"></i> Himachal Pradesh, India</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Profile Stats Grid -->
+                            <div class="profile-stats-grid">
+                                <div class="prof-stat">
+                                    <span class="prof-stat-label">Total Capacity</span>
+                                    <span class="prof-stat-val" id="prof-capacity">5,000 MT</span>
+                                </div>
+                                <div class="prof-stat">
+                                    <span class="prof-stat-label">Chamber Type</span>
+                                    <span class="prof-stat-val" id="prof-type">CA Chamber</span>
+                                </div>
+                                <div class="prof-stat">
+                                    <span class="prof-stat-label">Status</span>
+                                    <span class="prof-stat-val status-pill" id="prof-status">Glacial</span>
+                                </div>
+                                <div class="prof-stat">
+                                    <span class="prof-stat-label">Sectors Served</span>
+                                    <span class="prof-stat-val" id="prof-sectors">Horticulture, Dairy</span>
+                                </div>
+                            </div>
+
+                            <!-- Live Sub-Zero Diagnostics -->
+                            <div class="profile-diagnostics">
+                                <h5><i class="fa-solid fa-gauge-high"></i> Live Glacial Sensors</h5>
+                                <div class="gauge-bars-container">
+                                    <div class="gauge-item">
+                                        <div class="gauge-lbl">Humidity (RH) <span id="gauge-humidity-val">90%</span></div>
+                                        <div class="gauge-bar-track">
+                                            <div class="gauge-bar-fill humidity" id="gauge-humidity-fill" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="gauge-item">
+                                        <div class="gauge-lbl">Compressor Load <span id="gauge-load-val">74%</span></div>
+                                        <div class="gauge-bar-track">
+                                            <div class="gauge-bar-fill compressor" id="gauge-load-fill" style="width: 74%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="gauge-item">
+                                        <div class="gauge-lbl">Frost Accumulation <span id="gauge-frost-val">12%</span></div>
+                                        <div class="gauge-bar-track">
+                                            <div class="gauge-bar-fill frost" id="gauge-frost-fill" style="width: 12%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Acorn Rating -->
+                            <div class="acorn-rating-container">
+                                <span>Efficiency Index:</span>
+                                <div class="acorns-row" id="prof-acorns">
+                                    <!-- Rendered dynamically -->
+                                    <i class="fa-solid fa-nut active"></i>
+                                    <i class="fa-solid fa-nut active"></i>
+                                    <i class="fa-solid fa-nut active"></i>
+                                    <i class="fa-solid fa-nut"></i>
+                                    <i class="fa-solid fa-nut"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats-section" class="stats-section-wrapper">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h3>Glacial Metrics & Analytics</h3>
+                    <p>Live summary of national and global cold chain distribution</p>
+                </div>
+                
+                <div class="analytics-layout">
+                    <!-- Chart 1: Regional capacity -->
+                    <div class="chart-glass-card">
+                        <h4>Capacity Distribution (MT)</h4>
+                        <div class="chart-container-inner" id="regional-capacity-chart">
+                            <!-- Custom inline SVG Chart will be injected here -->
+                        </div>
+                        <div class="chart-legend" id="regional-capacity-legend">
+                            <!-- Legend items -->
+                        </div>
+                    </div>
+
+                    <!-- Chart 2: Temp Zones -->
+                    <div class="chart-glass-card">
+                        <h4>Temperature Zone Split</h4>
+                        <div class="chart-container-inner" id="temp-zone-chart">
+                            <!-- Custom inline SVG Chart will be injected here -->
+                        </div>
+                        <div class="chart-legend" id="temp-zone-legend">
+                            <!-- Legend items -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Records Log Table Section -->
+        <section id="records-section" class="records-section-wrapper">
+            <div class="section-container">
+                <div class="section-header">
+                    <h3><i class="fa-solid fa-file-invoice"></i> Government & Global Verified Registry</h3>
+                    <p>Authorized cold storage datasets. Data fields comply with Ministry of Agriculture (India) and Global Cold Chain Alliance (GCCA) parameters.</p>
+                </div>
+                
+                <div class="records-glass-table-wrapper">
+                    <table class="records-table" id="registry-table">
+                        <thead>
+                            <tr>
+                                <th>Name / Code</th>
+                                <th>Location</th>
+                                <th>Capacity (MT)</th>
+                                <th>Temp (°C)</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registry-table-body">
+                            <!-- Injected dynamically by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="records-pagination">
+                    <span class="pagination-info" id="pagination-info-text">Showing 1-10 of 25 records</span>
+                    <div class="pagination-btns">
+                        <button class="btn-pagination-nav" id="btn-prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                        <button class="btn-pagination-nav" id="btn-next-page">Next <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carve Registry Section (Add New Facility) -->
+        <section id="carve-section" class="carve-section-wrapper">
+            <div class="section-container">
+                <div class="carve-layout">
+                    <div class="carve-intro-info">
+                        <div class="cracked-ice-deco">
+                            <i class="fa-solid fa-snowflake symbol-snowflake"></i>
+                        </div>
+                        <h3>Carve a New Storage Record</h3>
+                        <p>Are you operating a government registered cold storage facility? Submit your details here. Upon validation, it will be added to the Freezerzz Glacial Grid.</p>
+                        
+                        <div class="compliance-note">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>Compliance Standards</strong>
+                                <p>Standard coordinates, verification indices, and temperature range updates undergo strict data sanitization audits before going live.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carve-form-card">
+                        <form id="form-carve-storage" novalidate>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="reg-name">Facility Name *</label>
+                                    <input type="text" id="reg-name" required placeholder="e.g. Indo-Swiss Fresh Cold storage">
+                                    <span class="form-error-msg" id="error-reg-name"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="reg-country">Country *</label>
+                                    <select id="reg-country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">United States</option>
+                                        <option value="Norway">Norway</option>
+                                        <option value="Netherlands">Netherlands</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="form-error-msg" id="error-reg-country"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="reg-state">State / Province *</label>
+                                    <input type="text" id="reg-state" required placeholder="e.g. Himachal Pradesh">
+                                    <span class="form-error-msg" id="error-reg-state"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="reg-capacity">Capacity (MT) *</label>
+                                    <input type="number" id="reg-capacity" required placeholder="e.g. 5000" min="1">
+                                    <span class="form-error-msg" id="error-reg-capacity"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="reg-temp">Target Temperature (°C) *</label>
+                                    <input type="number" id="reg-temp" required placeholder="e.g. -20" max="15">
+                                    <span class="form-error-msg" id="error-reg-temp"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="reg-lat">Latitude (GPS) *</label>
+                                    <input type="number" id="reg-lat" required placeholder="e.g. 31.10" step="0.0001">
+                                    <span class="form-error-msg" id="error-reg-lat"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="reg-lon">Longitude (GPS) *</label>
+                                    <input type="number" id="reg-lon" required placeholder="e.g. 77.17" step="0.0001">
+                                    <span class="form-error-msg" id="error-reg-lon"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="reg-sectors">Sectors Served (Comma separated)</label>
+                                    <input type="text" id="reg-sectors" placeholder="e.g. Horticulture, Pharmaceuticals, Seafood">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary col-12" id="btn-submit-carve"><i class="fa-solid fa-icicles"></i> Carve Record into Glacier</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Frozen Notification Banner -->
+    <div class="frozen-toast hidden" id="toast-banner">
+        <span class="toast-icon"><i class="fa-solid fa-snowflake"></i></span>
+        <span class="toast-message" id="toast-message-text">New record frozen!</span>
+    </div>
+
+    <!-- SEO Friendly Footer -->
+    <footer class="glacier-footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <i class="fa-solid fa-icicles logo-ice-icon"></i>
+                        <h4>Freezerzz</h4>
+                    </div>
+                    <p class="footer-desc">An interactive sub-zero facility registry and detection grid, inspired by the chill of the Ice Age. Dedicated to maintaining the cold chains of India and the world.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Quick Navigation</h5>
+                    <ul>
+                        <li><a href="#radar-section">Radar Map</a></li>
+                        <li><a href="#stats-section">Glacier Stats</a></li>
+                        <li><a href="#records-section">Verified Registry</a></li>
+                        <li><a href="#carve-section">Carve Registry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-compliance">
+                    <h5>Regulatory References</h5>
+                    <ul>
+                        <li><a href="https://nhb.gov.in" target="_blank" rel="noopener">National Horticulture Board (NHB)</a></li>
+                        <li><a href="https://www.nccd.gov.in" target="_blank" rel="noopener">NCCD - Cold Chain Development</a></li>
+                        <li><a href="https://www.gcca.org" target="_blank" rel="noopener">Global Cold Chain Alliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Freezerzz. Built with an sub-zero theme. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
